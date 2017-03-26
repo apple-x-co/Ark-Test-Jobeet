@@ -3,6 +3,14 @@ use v5.20.3;
 use strict;
 use warnings;
 use parent 'Jobeet::Schema::ResultBase';
+use Jobeet::Models;
+
+sub insert {
+    my $self = shift;
+
+    $self->expires_at( models('Schema')->now->add( days => 30 ) );
+    $self->next::method(@_);
+}
 
 # ここにテーブル定義
 __PACKAGE__->table('jobeet_job');
