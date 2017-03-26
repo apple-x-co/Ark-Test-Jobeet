@@ -1,4 +1,8 @@
 package Jobeet::Schema::Result::Something;
+use v5.20.3;
+use strict;
+use warnings;
+use parent 'Jobeet::Schema::ResultBase';
 
 __PACKAGE__->table('jobeet_something');
 
