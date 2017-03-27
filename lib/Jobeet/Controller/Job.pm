@@ -2,8 +2,9 @@ package Jobeet::Controller::Job;
 use Ark 'Controller';
 
 use Jobeet::Models;
+use Data::Dumper;
 
-sub index :Path :Args(0) {
+sub index :Path {
     my ($self, $c) = @_;
 
 #    $c->stash->{jobs} = models('Schema::Job');
@@ -12,7 +13,9 @@ sub index :Path :Args(0) {
 #        expires_at => { '>=', models('Schema')->now->add( days => models('conf')->{active_days} ) },
 #    });
 
-    $c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
+#    $c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
+
+    $c->stash->{categories} = models('Schema::Category')->get_with_jobs;
 }
 
 # /job/{job_token} （詳細）

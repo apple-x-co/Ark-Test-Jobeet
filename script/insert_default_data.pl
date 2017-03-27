@@ -27,7 +27,7 @@ $programming_category->add_to_jobs({
     is_activated => 1,
     token        => 'job_sensio_labs',
     email        => 'job@example.com',
-    expires_at   => '2010-10-10',
+    expires_at   => '2017-04-30',
 });
 
 my $design_category = models('Schema::Category')->find({ name => 'Design' });
@@ -44,7 +44,7 @@ $design_category->add_to_jobs({
     is_activated => 1,
     token        => 'job_extreme_sensio',
     email        => 'job@example.com',
-    expires_at   => '2010-10-10',
+    expires_at   => '2017-04-30',
 });
 
 {
@@ -68,4 +68,26 @@ $design_category->add_to_jobs({
         created_at => '2005-12-01',
         expires_at => '2005-12-31',
     });
+}
+
+{
+    my $job_rs = models('Schema::Job');
+    my $cat_rs = models('Schema::Category');
+
+    my $cat_programming = $cat_rs->find({ name => 'Programming' });
+
+    for my $i (100 .. 130) {
+        my $job = $job_rs->create({
+            category_id  => $cat_programming->id,
+            company      => "Company $i",
+            position     => 'Web Developer',
+            location     => 'Paris, France',
+            description  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            how_to_apply => "Send your resume to lorem.ipsum [at] company_${i}.sit",
+            is_public    => 1,
+            is_activated => 1,
+            token        => "job_$i",
+            email        => 'job@example.com',
+        });
+    }
 }
