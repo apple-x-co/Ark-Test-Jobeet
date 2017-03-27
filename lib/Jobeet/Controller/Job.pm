@@ -2,7 +2,6 @@ package Jobeet::Controller::Job;
 use Ark 'Controller';
 
 use Jobeet::Models;
-use Data::Dumper;
 
 sub index :Path {
     my ($self, $c) = @_;

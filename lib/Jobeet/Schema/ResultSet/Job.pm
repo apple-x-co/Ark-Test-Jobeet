@@ -22,4 +22,9 @@ use Jobeet::Models;
 #    $self;
 #}
 
+sub get_jobs_by_category_id {
+    my $self = shift;
+    return $self;
+}
+
 1;
