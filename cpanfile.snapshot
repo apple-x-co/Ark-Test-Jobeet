@@ -152,6 +152,16 @@ DISTRIBUTIONS
       strict 0
       utf8 0
       warnings 0
+  CGI-Simple-1.115
+    pathname: S/SZ/SZABGAB/CGI-Simple-1.115.tar.gz
+    provides:
+      CGI::Simple 1.115
+      CGI::Simple::Cookie 1.114
+      CGI::Simple::Standard 1.114
+      CGI::Simple::Util 1.114
+    requirements:
+      IO::Scalar 0
+      Test::More 0
   CPAN-Meta-2.150010
     pathname: D/DA/DAGOLDEN/CPAN-Meta-2.150010.tar.gz
     provides:
@@ -1707,6 +1717,22 @@ DISTRIBUTIONS
       Encode 2.10
       Exporter 5.57
       ExtUtils::MakeMaker 6.30
+  IO-stringy-2.111
+    pathname: D/DS/DSKOLL/IO-stringy-2.111.tar.gz
+    provides:
+      IO::AtomicFile 2.111
+      IO::Clever 1.01
+      IO::InnerFile 2.111
+      IO::Lines 2.111
+      IO::Scalar 2.111
+      IO::ScalarArray 2.111
+      IO::Stringy 2.111
+      IO::Wrap 2.111
+      IO::WrapTie 2.111
+      IO::WrapTie::Master 2.111
+      IO::WrapTie::Slave 2.111
+    requirements:
+      ExtUtils::MakeMaker 0
   IPC-Run-0.94
     pathname: T/TO/TODDR/IPC-Run-0.94.tar.gz
     provides:
