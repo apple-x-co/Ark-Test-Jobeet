@@ -15,6 +15,11 @@ return {
             sqlite_unicode => 1,
         },
     ],
+
+    cache => {
+        share_file     => $home->file('tmp', 'cache')->stringify,
+        unlink_on_exit => 0,
+    }
 };
 
 #return {
