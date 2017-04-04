@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lib/Jobeet/Form/Job.pm:7
+msgid "Category"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:29
+msgid "Company"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:58
+msgid "Description"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:84
+msgid "Email"
+msgstr ""
+
+#: lib/Jobeet/Controller/Job.pm:22
+msgid "Hello"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:71
+msgid "How to apply?"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:50
+msgid "Location"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:16
+msgid "Type"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:37
+msgid "URL"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:94
+msgid "please input %1"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:96
+msgid "please input %1 as ascii characters without space"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:95
+msgid "please input %1 as integer"
+msgstr ""
+
+#: lib/Jobeet/Form/Job.pm:42
+msgid "position"
+msgstr ""

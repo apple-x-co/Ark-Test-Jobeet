@@ -16,3 +16,5 @@ requires 'CGI::Simple';
 requires 'Cache::FastMmap';
 requires 'DateTime::Format::W3CDTF';
 requires 'JSON::Any';
+requires 'Locale::Maketext::Lexicon';
+requires 'Ark::Plugin::I18N';

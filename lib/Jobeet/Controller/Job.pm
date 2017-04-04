@@ -18,6 +18,8 @@ sub index :Path {
 #    $c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
 
     $c->stash->{categories} = models('Schema::Category')->get_with_jobs;
+
+    $c->localize('Hello');
 }
 
 # /job/{job_token} （詳細）

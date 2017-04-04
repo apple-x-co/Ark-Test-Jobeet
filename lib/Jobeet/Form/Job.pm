@@ -4,7 +4,7 @@ use Ark 'Form';
 use Jobeet::Models;
 
 param category => (
-        label   => 'Category',
+        label   => x('Category'),
         type    => 'ChoiceField',
         choices => [map { $_->slug => $_->name } models('Schema::Category')->all],
         constraints => [
@@ -13,7 +13,7 @@ param category => (
     );
 
 param type => (
-        label   => 'Type',
+        label   => x('Type'),
         type    => 'ChoiceField',
         choices => [
             'full-time' => 'Full time',
@@ -26,7 +26,7 @@ param type => (
     );
 
 param company => (
-        label       => 'Company',
+        label       => x('Company'),
         type        => 'TextField',
         constraints => [
             'NOT_NULL',
@@ -34,12 +34,12 @@ param company => (
     );
 
 param url => (
-        label => 'URL',
+        label => x('URL'),
         type  => 'URLField',
     );
 
 param position => (
-        label       => 'position',
+        label       => x('position'),
         type        => 'TextField',
         constraints => [
             'NOT_NULL',
@@ -47,7 +47,7 @@ param position => (
     );
 
 param location => (
-        label       => 'Location',
+        label       => x('Location'),
         type        => 'TextField',
         constraints => [
             'NOT_NULL',
@@ -55,7 +55,7 @@ param location => (
     );
 
 param description => (
-        label       => 'Description',
+        label       => x('Description'),
         type        => 'TextField',
         widget      => 'textarea',
         attr        => {
@@ -68,7 +68,7 @@ param description => (
     );
 
 param how_to_apply => (
-        label       => 'How to apply?',
+        label       => x('How to apply?'),
         type        => 'TextField',
         widget      => 'textarea',
         attr        => {
@@ -81,12 +81,20 @@ param how_to_apply => (
     );
 
 param email => (
-        label       => 'Email',
+        label       => x('Email'),
         type        => 'TextField',
         constraints => [
             'NOT_NULL',
             'EMAIL_LOOSE'
         ],
     );
+
+sub messages {
+    return {
+        not_null => x('please input [_1]'),
+        int      => x('please input [_1] as integer'),
+        ascii    => x('please input [_1] as ascii characters without space'),
+    };
+}
 
 1;
