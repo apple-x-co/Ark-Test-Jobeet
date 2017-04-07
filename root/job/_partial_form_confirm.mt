@@ -5,7 +5,8 @@
   <tfoot>
     <tr>
       <td colspan="2">
-        <input type="submit" value="Preview your job" name="__confirm" />
+        <input type="submit" value="Input" name="__input" />
+        <input type="submit" value="Register" name="__register" />
       </td>
     </tr>
   </tfoot>
@@ -14,14 +15,8 @@
     <tr>
       <th><?= raw_string $form->label($field) ?></th>
       <td>
-? if ($form->is_error($field)) {
-        <ul class="error_list">
-? for my $err (@{ $form->error_messages($field) }) {
-          <li><?= raw_string $err ?></li>
-? } # endfor $err
-        </ul>
-? } # endif
-        <?= raw_string $form->input($field) ?>
+        <?= raw_string $form->value($field) ?>
+        <?= raw_string $form->hidden($field) ?>
       </td>
     </tr>
 ? } # endfor $field

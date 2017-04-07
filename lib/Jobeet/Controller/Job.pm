@@ -37,14 +37,29 @@ sub show :Path :Args(1) {
 }
 
 # /job/create （新規作成）
+use Data::Dumper;
 sub create :Local :Form('Jobeet::Form::Job') {
     my ($self, $c) = @_;
 
 #    $c->stash->{form} = $self->form;
-    if ($c->req->method eq 'POST' and $self->form->submitted_and_valid) {
-        my $job = models('Schema::Job')->create_from_form($self->form);
-        $c->redirect( $c->uri_for('/job', $job->token) );
+
+#    if ($c->req->method eq 'POST' and $self->form->submitted_and_valid) {
+#        my $job = models('Schema::Job')->create_from_form($self->form);
+#        $c->redirect( $c->uri_for('/job', $job->token) );
+#    }
+
+    my $confirm = $c->req->raw_param('__confirm');
+    my $register = $c->req->raw_param('__register');
+    if ($c->req->method eq 'POST' and $self->form->submitted_and_valid and defined($confirm)) {
+        $c->forward('/job/confirm');
     }
+}
+
+# /job/confirm
+sub confirm :Local :Form('Jobeet::Form::Job') {
+    my ($self, $c) = @_;
+
+    $c->view('MT')->template('job/confirm');
 }
 
 sub job :Chained('/') :PathPart :CaptureArgs(1) {

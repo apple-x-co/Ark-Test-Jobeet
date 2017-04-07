@@ -97,4 +97,20 @@ sub messages {
     };
 }
 
+sub hidden {
+    my ($self, $name) = @_;
+
+    my $field = $self->field($name) or return;
+
+    return sprintf("<input type='hidden' name='%s' value='%s' />", $name, $self->params->get($name));
+}
+
+sub value {
+    my ($self, $name) = @_;
+
+    my $field = $self->field($name) or return;
+
+    return HTML::Escape::escape_html($self->params->get($name));
+}
+
 1;
